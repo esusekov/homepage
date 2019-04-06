@@ -1,0 +1,112 @@
+html {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    --primary-color: #333;
+    --secondary-color: #444;
+    --bg-color: white;
+
+    display: flex;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    flex-direction: column;
+    padding: 15vh 10vw;
+    margin: 0;
+    color: var(--primary-color);
+    background-color: var(--bg-color);
+    font-family: Montserrat, sans-serif;
+    font-weight: 500;
+}
+
+h1 {
+    font-size: 8vmin;
+    letter-spacing: 0.03em;
+}
+
+h2 {
+    display: flex;
+    align-items: center;
+    font-size: 3vmin;
+    color: var(--secondary-color);
+}
+
+.rocketLink {
+    width: 4vmin;
+    height: 4vmin;
+    margin-left: 1.5vmin;
+    transition: transform 200ms ease, filter 200ms ease;
+}
+
+.rocketLink:hover {
+    transform: translateY(-5%);
+    filter: drop-shadow(0 1vmin 1vmin rgba(0, 0, 0, 0.2));
+}
+
+.rocketLink:active {
+    transform: translateY(0);
+    filter: drop-shadow(0 1vmin 1vmin rgba(0, 0, 0, 0.1));
+}
+
+
+.rocket {
+    width: 100%;
+    height: 100%;
+}
+
+.rocketCircle {
+    fill: var(--primary-color);
+}
+
+.rocketArrow {
+    fill: var(--bg-color);
+}
+
+.links {
+    display: flex;
+    width: 40%;
+    justify-content: space-between;
+    margin-top: auto;
+}
+
+.link {
+    position: relative;
+    width: auto;
+    font-size: 2vmin;
+}
+
+.link:any-link {
+    color: var(--secondary-color);
+    text-decoration: none;
+}
+
+.link:after {
+    content: '';
+    position: absolute;
+    top: calc(100% + 1vmin);
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--secondary-color);
+    transition: transform 200ms ease-in;
+    transform: scaleX(0);
+    transform-origin: left;
+}
+
+.link:hover:after {
+    transform: scaleX(1);
+}
+
+.link + .link {
+    margin-left: 1vmin;
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        --primary-color: #eee;
+        --secondary-color: #ccc;
+        --bg-color: #333;
+    }
+}
