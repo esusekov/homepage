@@ -19,6 +19,13 @@ body {
     background-color: var(--bg-color);
     font-family: Montserrat, sans-serif;
     font-weight: 500;
+    transition: color 200ms ease, background-color 200ms ease;
+}
+
+body.dark {
+    --primary-color: #eee;
+    --secondary-color: #ccc;
+    --bg-color: #333;
 }
 
 h1 {
@@ -31,6 +38,7 @@ h2 {
     align-items: center;
     font-size: 3vmin;
     color: var(--secondary-color);
+    transition: color 200ms ease;
 }
 
 .rocketLink {
@@ -58,10 +66,12 @@ h2 {
 
 .rocketCircle {
     fill: var(--primary-color);
+    transition: fill 200ms ease;
 }
 
 .rocketArrow {
     fill: var(--bg-color);
+    transition: fill 200ms ease;
 }
 
 .links {
@@ -80,9 +90,10 @@ h2 {
 .link:any-link {
     color: var(--secondary-color);
     text-decoration: none;
+    transition: color 200ms ease;
 }
 
-.link:after {
+.link::after {
     content: '';
     position: absolute;
     top: calc(100% + 1vmin);
@@ -95,12 +106,46 @@ h2 {
     transform-origin: left;
 }
 
-.link:hover:after {
+.link:hover::after {
     transform: scaleX(1);
 }
 
 .link + .link {
     margin-left: 1vmin;
+}
+
+.toggle {
+    position: fixed;
+    top: 5vh;
+    right: 5vh;
+
+    width: 3vmin;
+    height: 3vmin;
+    padding: 0;
+    outline: none;
+    box-shadow: none;
+    cursor: pointer;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    border: 2px solid var(--primary-color);
+    transition: background-color 200ms ease, border 200ms ease;
+}
+
+.toggle::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-color: var(--bg-color);
+    border-radius: 50%;
+    transform: scale(1);
+    transition: transform 200ms ease, background-color 200ms ease;
+}
+
+.toggle:hover::after {
+    transform: scale(0);
 }
 
 @media (prefers-color-scheme: dark) {
