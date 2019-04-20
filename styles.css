@@ -163,6 +163,10 @@ h2 {
         padding: 10vh 10vw;
     }
 
+    body.dark {
+        --bg-color: black;
+    }
+
     h1 {
         font-size: 8vh;
     }
