@@ -34,18 +34,21 @@ h1 {
 }
 
 h2 {
-    display: flex;
-    align-items: center;
+    display: inline-flex;
+    align-items: baseline;
     font-size: 3vmin;
+    line-height: 4vmin;
     color: var(--secondary-color);
     transition: color 200ms ease;
 }
 
 .rocketLink {
+    display: inline-block;
     width: 4vmin;
     height: 4vmin;
-    margin-left: 1.5vmin;
+    margin-left: 1vmin;
     transition: transform 200ms ease, filter 200ms ease;
+    vertical-align: middle;
 }
 
 .rocketLink:hover {
@@ -57,7 +60,6 @@ h2 {
     transform: translateY(0);
     filter: drop-shadow(0 1vmin 1vmin rgba(0, 0, 0, 0.1));
 }
-
 
 .rocket {
     width: 100%;
@@ -153,5 +155,52 @@ h2 {
         --primary-color: #eee;
         --secondary-color: #ccc;
         --bg-color: #333;
+    }
+}
+
+@media (pointer:coarse) {
+    body {
+        padding: 10vh 10vw;
+    }
+
+    h1 {
+        font-size: 8vh;
+    }
+
+    h2 {
+        flex-wrap: wrap;
+        font-size: 2.5vh;
+        line-height: 4vh;
+    }
+
+    .company {
+        margin-top: 1vh;
+    }
+
+    .rocketLink {
+        display: inline-block;
+        width: 4vh;
+        height: 4vh;
+        margin-left: 0.5vh;
+    }
+
+    .links {
+        width: auto;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .link {
+        font-size: 3vh;
+    }
+
+    .link + .link {
+        margin-left: 0;
+        margin-top: 3vh;
+    }
+
+    .toggle {
+        width: 3vh;
+        height: 3vh;
     }
 }
