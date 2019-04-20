@@ -164,7 +164,7 @@ h2 {
     }
 
     body.dark {
-        --bg-color: black;
+        --bg-color: #1d1d1d;
     }
 
     h1 {
