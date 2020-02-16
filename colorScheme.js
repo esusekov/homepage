@@ -9,6 +9,8 @@ export const useColorScheme = () => {
 	mq.addListener(() => {
 		if (mq.matches) {
 			document.body.classList.add('dark')
+		} else {
+			document.body.classList.remove('dark')
 		}
 	})
 }
