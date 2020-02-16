@@ -1,3 +1,3 @@
-import { useColorScheme } from './colorScheme'
+import { useColorScheme } from './colorScheme.js'
 
 useColorScheme()
